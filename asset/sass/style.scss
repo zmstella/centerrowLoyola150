@@ -1,0 +1,271 @@
+@import "normalize";
+@import "base";
+@import "susy";
+@import "mobile";
+
+
+@media screen {
+    @import "screen";
+}
+
+@media only screen and (max-width:1200px){ /* Styles applied when the when the view window shinks below 1200px */
+    h1{
+    text-align:center;
+    font-size:50px;
+    margin-bottom:24px;
+    line-height:48px;
+    font-weight:normal;
+    background-color:#ffc95c;
+    border-top:5px solid #890A21;
+    border-bottom:5px solid #890A21;
+    padding-top:14px;padding-bottom:14px;
+    } /* Shrinks the main title and centers it */
+    article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{
+    display: block;
+    text-align-last: center;
+    } /* Helps center some of the page elements */
+    p {
+    margin: 1rem 0rem 1rem 0rem;
+    } /* Centers body text */
+    .first-nav-link{
+    display:none;
+    } /* Hides linear link in mobile to avoid duplication */
+    .nav-link{
+    margin-left:24px;
+    text-align: center;
+    margin-right:24px;
+    } /* Centers and spaces out linear nav links */
+    .prev-link-mobile{
+    margin-left:24px;
+    text-align: center;
+    margin-right:24px;
+    }
+    .mobile-menu {
+    cursor: pointer;
+    transition: 1.6s;
+    } /* Dropdown animation for the main navigiation menu */ 
+    header nav .navigation{
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    border-top: 5px solid #890A21;
+    border-bottom: 5px solid #890A21;
+    padding: 5px 0;
+    margin: 42px 0;
+    background-color: #ffc95c;
+    flex-direction: column;
+    line-height: 2em;
+    } /* Gives the main navigation a column format */
+    .header_bottom-tier{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease-out;
+    }
+    .page #content{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -36px;
+    place-content: center;
+    } /* More styling to enhance the mobile display */
+    .page #content .breadcrumbs+.blocks, .page #content .blocks:first-child{
+    width: 100%;
+    }
+    #content .blocks>h2:first-of-type{
+    text-align: center;
+    font-size: 44px;
+    } /* Center page titles */
+    h2 {
+    text-align: center;
+    font-size: 44px;
+    margin-top: 42px;
+    }
+    h3, .h3 {
+    font-size: 36px;
+    text-align: center;
+    margin-left: 24px;
+    margin-right: 24px;
+    }
+    h4, .h4 {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-left: 24px;
+    margin-right: 24px;
+    }
+    .right.file{
+    max-width: 100%;
+    margin-left: auto;
+    display: block;
+    margin-right: auto;
+    width: 100%;
+    text-align: -webkit-center;
+    } /* Helps display image in mobile view */
+    .left.file{
+    max-width: 100%;
+    margin-left: auto;
+    display: block;
+    margin-right: auto;
+    width: 100%;
+    text-align: -webkit-center;
+    } /* Helps display image in mobile view */
+    .item-showcase .resource, .file .resource{
+    display: flex;
+    flex-direction: column;
+    flex-basis: content;
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+    max-width: 100%;
+    text-align: -webkit-center;
+    margin: 36px 0 36px 0;
+    margin-left:auto;
+    margin-right:auto;
+    } /* more styling for images */
+    .first-submenu {
+    display: block;
+    text-align: center;
+    list-style: none;
+    background-color: #ffc95c;
+    border-top: 5px solid #890A21;
+    border-bottom: 5px solid #890A21;
+    line-height: 1.4em;
+    }
+    nav.bottom-submenu {
+    display:block;
+    text-align:center;
+    padding: 0 .625% 24px 0;
+    line-height: 1.4em;
+    } /* Displays the sub menu at the bottom rather than on the top left side */
+    #home-nav-link {
+    display:none
+    } 
+    .page #content .sub-menu {
+    padding: 0 .625% 24px 0;
+    width: 12.5%;
+    margin-top: 58px;
+    display: none;
+    } /* Hides the sub menu that shows up at the top left in desktop view */ 
+    article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{
+    display: block;text-align-last: center;
+    }
+    .page .media-render img {
+    vertical-align: top;
+    max-width: 100%;
+    place-content: center;
+    }
+    .caption>*:first-child {
+    margin-top: 21px;
+    font-size: 17px;
+    text-align: center;
+    } /* Centers captions */
+    li{
+    margin-bottom:42px;
+    margin-top:42px;
+    } /* Centers navigation links */
+    .page #content .breadcrumbs {
+    text-align: center;
+    margin-right:24px;
+    margin-left:24px;
+    }
+    .property .values, .property h4+.value {
+    width: 100%;
+    margin-left: 0px;
+    text-align: center;
+    }
+    .field .inputs {
+    width: 100%;
+    margin-left: 0px;
+    text-align: center;
+    }
+    img {
+    border-style: none;
+    vertical-align: top;
+    max-width: 100%;
+    place-content: center;
+    }
+    .property h4, #linked-resources h4 {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    padding: 0 .625%;
+    font-size: 28px;
+    }
+    }
+    @media only screen and (min-width:1200px){ /* Applies these styles in view windows larger that 1200px */
+    .mobile-menu{
+    display:none;
+    } /* Hides the mobile icon */ 
+    #home-nav-link {
+    margin-left: 24px;
+    } /* Shows the linear nav link */ 
+    .first-submenu {
+    display:none;
+    }
+    .first-submenu-header {
+    display:none;
+    }
+    .first-nav-link {
+    margin-left:24px;
+    }
+    .prev-link-mobile {
+    display: none;
+    }
+    }
+    @media only screen and (max-width:350px){ /* Applies these styles for smaller mobile devices */
+    h1{
+    text-align:center;
+    font-size:44px;
+    margin-bottom:24px;
+    line-height:48px;
+    font-weight:normal;
+    background-color:#ffc95c;
+    border-top:5px solid #890A21;
+    border-bottom:5px solid #890A21;
+    padding-top:14px;padding-bottom:14px;
+    }
+    #content .blocks>h2:first-of-type{
+    text-align: center;
+    font-size: 36px;
+    }
+    h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 42px;
+    }
+    h3, .h3 {
+    font-size: 28px;
+    text-align: center;
+    margin-left: 24px;
+    margin-right: 24px;
+    }
+    h4, .h4 {
+    font-size: 24px;
+    text-align: center;
+    margin-left: 24px;
+    margin-right: 24px;
+    }
+    .property h4, #linked-resources h4 {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    padding: 0 .625%;
+    font-size: 24px;
+    }
+    }
+    #skip a
+    {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    }
+    #skip a:focus
+    {
+    position:static;
+    width:auto;
+    height:auto;
+    }
+
+

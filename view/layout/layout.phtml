@@ -1,0 +1,102 @@
+<?php
+$escape = $this->plugin('escapeHtml');
+$this->htmlElement('html')->setAttribute('lang', $this->lang());
+$this->headMeta()->setCharset('utf-8');
+$this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1, shrink-to-fit=no');
+$this->headTitle($this->setting('installation_title', 'Omeka S'))->setSeparator(' · ');
+$this->headLink()->prependStylesheet('//fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic');
+$this->headLink()->prependStylesheet($this->assetUrl('css/bootstrap.css'));
+$this->headLink()->prependStylesheet($this->assetUrl('css/iconfonts.css', 'Omeka'));
+$this->headLink()->appendStylesheet($this->assetUrl('css/style.css'));
+$this->headScript()->prependFile($this->assetUrl('js/centerrow.js'));
+$this->headScript()->prependFile($this->assetUrl('js/global.js', 'Omeka'));
+$this->headScript()->prependFile($this->assetUrl('vendor/jquery/jquery.min.js', 'Omeka'));
+
+$this->trigger('view.layout');
+$userBar = $this->userBar();
+?>
+<?php echo $this->doctype(); ?>
+<?php echo $this->htmlElement('html'); ?>
+    <head>
+        <?php echo $this->headMeta(); ?>
+        <?php echo $this->headTitle(); ?>
+        <?php echo $this->headLink(); ?>
+        <?php echo $this->headStyle(); ?>
+        <?php echo $this->headScript(); ?>
+    </head>
+    <?php echo $this->htmlElement('body'); ?>
+    <div id="skip">
+    <a id="top-of-page" aria-label="Top of the page" tabindex="0"></a>
+    </div>
+   <?php echo $userBar; ?>
+	<div class="container">
+            <header>
+                <?php if ($this->themeSetting('logo')): ?>
+                <a href="<?php echo $site->url(); ?>" class="site-title"><img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" title="Logo"></a>
+                <?php else: ?>
+                <a href="<?php echo $site->url(); ?>" class="site-title"><?php echo $this->pageTitle($site->title()); ?></a>
+                <?php endif; ?>
+                <a href="#content" aria-label="Skip to main content" tabindex="0"></a>
+                <button class="mobile-menu" aria-label="mobile navigation trigger"> 
+                    <img src="/themes/centerrowLoyola150/asset/img/mobile-menu50x50.jpg">
+                </button>
+	            <div class="header_bottom-tier">
+	            <nav aria-label="navigation">
+                    <?php
+                    echo $site->publicNav()->menu()->renderMenu(null, [
+                        'maxDepth' => $this->themeSetting('nav_depth') - 1
+                    ]);
+                    ?>
+                </nav>
+                </div>
+
+
+                <!--------------------------search function taken out---------------------------
+                <div id="search-container">
+                            <?php echo $this->partial('common/search-form'); ?>
+                            <button type="button" class="search-toggle" title="Toggle search"></button>
+                        </div>
+                ------------------------------------------------------------------------------>
+            </header>
+            <div id="content" aria-label="main content">
+                <?php echo $this->content; ?>
+            </div>
+            <a href="#top-of-page" aria-label="Back to the top of the page" tabindex="0"></a>
+            <footer>
+                <?php if ($footerContent = $this->themeSetting('footer')): ?>
+                <?php echo $footerContent; ?>
+                <?php else: ?>
+                    <?php echo $this->translate('Powered by Omeka S'); ?>                <?php endif; ?>
+            </footer>
+        </div>
+      <script>
+	
+        var icon = document.getElementsByClassName("mobile-menu");
+            var i;
+
+            for (i = 0; i < icon.length; i++) {
+                icon[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+                    var menu = this.nextElementSibling;
+                    if (menu.style.maxHeight) {
+                        menu.style.maxHeight = null;
+                    } else {
+                        menu.style.maxHeight = menu.scrollHeight + "px";
+                    } 
+                });
+            }
+
+        $(document).ready(function(){
+            $(".sub-menu>ul").before("<p><em>In this section:</em></p>");
+            $(".blocks").append($(".sub-menu").clone(true).removeClass().addClass("bottom-submenu"));
+            $(".bottom-submenu").append($(".prev-link-mobile>a"));
+            $("p").attr("tabindex", "0");
+            $("h2").attr("tabindex", "0");
+            $("h3").attr("tabindex", "0");
+            $("h4").attr("tabindex", "0");
+            $("title").attr("aria-hidden", "true");
+
+            });
+      </script>
+     </body>
+</html>
