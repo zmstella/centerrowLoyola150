@@ -2,8 +2,8 @@
 
 This site serves as a development space for "Then and Now: 150 Years at Loyola University," a web exhibit showcasing digitized archival materials collected across Loyola’s 150 year institutional history. It was built by the 2018-2019 class of "Sesquicentennial Scholars," a graduate assistantship program created in partnership with the [LUC University Archives and Special Collections](https://www.luc.edu/archives/index.shtml), [LUC Center for Textual Studies and Digital Humanities](https://www.luc.edu/ctsdh/), and the [LUC Women and Leadership Archives](https://www.luc.edu/wla/)
 
-It is templated from [Omeka S](https://omeka.org/s/), "a web publication system for universities, galleries, libraries,
-archives, and museums." We have made considerable cusotmizations to the 'centerrow" theme to improve frontend aspects like responsiveness, accessibility, and aesthtics. The resulting child theme we derived is labelled as 'centerrowLoyola150.'
+It is templated from the 'centerrow' theme in [Omeka S](https://omeka.org/s/), "a web publication system for universities, galleries, libraries,
+archives, and museums." We have made considerable cusotmizations to the theme to improve frontend aspects like responsiveness, accessibility, and aesthtics. The resulting child theme we derived is labelled as 'centerrowLoyola150.'
 
 Further details on design considerations, code alterations, and user evaluations are documented [HERE](https://docs.google.com/document/d/1Nxllhx8DZZP8bWdTJHt48kPI3_AsY8N0S7qqu5nlXLI/edit?usp=sharing)
 
